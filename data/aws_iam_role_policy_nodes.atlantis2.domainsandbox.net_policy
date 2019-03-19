@@ -1,0 +1,65 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeInstances",
+        "ec2:DescribeRegions"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:GetEncryptionConfiguration",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:Get*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/addons/*",
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/cluster.spec",
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/config",
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/instancegroup/*",
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/pki/issued/*",
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/pki/private/kube-proxy/*",
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/pki/private/kubelet/*",
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/pki/ssh/*",
+        "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/secrets/dockerconfig"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:Get*"
+      ],
+      "Resource": "arn:aws:s3:::cloud9-941497602196-sam-deployments-us-east-1/atlantis2.domainsandbox.net/pki/private/calico-client/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:GetRepositoryPolicy",
+        "ecr:DescribeRepositories",
+        "ecr:ListImages",
+        "ecr:BatchGetImage"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
