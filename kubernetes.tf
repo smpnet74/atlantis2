@@ -310,13 +310,13 @@ resource "aws_security_group_rule" "all-node-to-node" {
   protocol                 = "-1"
 }
 
-resource "aws_security_group_rule" "https-external-to-master-54-224-124-105--32" {
+resource "aws_security_group_rule" "https-external-to-master-3-90-144-90--32" {
   type              = "ingress"
   security_group_id = "${aws_security_group.masters-atlantis2-domainsandbox-net.id}"
   from_port         = 443
   to_port           = 443
   protocol          = "tcp"
-  cidr_blocks       = ["54.224.124.105/32"]
+  cidr_blocks       = ["3.90.144.90/32"]
 }
 
 resource "aws_security_group_rule" "master-egress" {
@@ -382,22 +382,22 @@ resource "aws_security_group_rule" "node-to-master-udp-1-65535" {
   protocol                 = "udp"
 }
 
-resource "aws_security_group_rule" "ssh-external-to-master-54-224-124-105--32" {
+resource "aws_security_group_rule" "ssh-external-to-master-3-90-144-90--32" {
   type              = "ingress"
   security_group_id = "${aws_security_group.masters-atlantis2-domainsandbox-net.id}"
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
-  cidr_blocks       = ["54.224.124.105/32"]
+  cidr_blocks       = ["3.90.144.90/32"]
 }
 
-resource "aws_security_group_rule" "ssh-external-to-node-54-224-124-105--32" {
+resource "aws_security_group_rule" "ssh-external-to-node-3-90-144-90--32" {
   type              = "ingress"
   security_group_id = "${aws_security_group.nodes-atlantis2-domainsandbox-net.id}"
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
-  cidr_blocks       = ["54.224.124.105/32"]
+  cidr_blocks       = ["3.90.144.90/32"]
 }
 
 terraform = {
